@@ -10,10 +10,9 @@
     <!-- TOP -->
     <div class="product-top">
 
-        <!-- IMAGE -->
+        <!-- IMAGE PLACEHOLDER -->
         <div class="product-gallery">
-            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
-                 alt="{{ product.name }}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
         </div>
 
         <!-- INFO -->
@@ -24,17 +23,36 @@
                 {{ product.price }} BYN
             </div>
 
-            <form action="{% url 'cart:cart_add' product.id %}" method="post" class="add-to-cart-form">
-                {{ cart_product_form.quantity }}
-                {{ cart_product_form.update }}
+            <!-- ФОРМА ДОБАВЛЕНИЯ В КОРЗИНУ -->
+            <form action="{% url 'cart:cart_add' product.id %}"
+                  method="post"
+                  class="add-to-cart-form">
+
                 {% csrf_token %}
-                <button type="submit" class="btn-buy">Добавить в корзину</button>
+
+                <div class="quantity-field">
+                    {{ cart_product_form.quantity }}
+                </div>
+
+                {{ cart_product_form.update }}
+
+                <button type="submit" class="btn-buy">
+                    Добавить в корзину
+                </button>
             </form>
 
             <div class="product-meta">
                 <span>Категория: {{ product.category.name }}</span>
-                <span>В наличии: {{ product.stock }}</span>
+
+                <span>
+                    {% if product.available %}
+                        В наличии ({{ product.stock }})
+                    {% else %}
+                        Нет в наличии
+                    {% endif %}
+                </span>
             </div>
+
         </div>
 
     </div>
@@ -42,7 +60,12 @@
     <!-- DESCRIPTION -->
     <div class="product-description">
         <h2>Описание</h2>
-        <p>{{ product.description|linebreaks }}</p>
+
+        {% if product.description %}
+            <p>{{ product.description|linebreaks }}</p>
+        {% else %}
+            <p>Описание временно отсутствует.</p>
+        {% endif %}
     </div>
 
 </div>

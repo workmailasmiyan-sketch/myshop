@@ -19,6 +19,8 @@ class Category(models.Model):
                        args=[self.slug])
 
 
+
+
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
@@ -26,12 +28,20 @@ class Product(models.Model):
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    stock = models.PositiveIntegerField()
+    stock = models.PositiveIntegerField(default=0)
     available = models.BooleanField(default=True)
     is_popular = models.BooleanField(default=False) 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
+        indexes = [
+            models.Index(fields=['id', 'slug']),
+        ]
 
     class Meta:
         ordering = ('name',)
@@ -47,3 +57,5 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail',
                        args=[self.id, self.slug])
+
+                       

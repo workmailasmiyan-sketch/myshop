@@ -50,14 +50,20 @@ class Cart(object):
         Перебор элементов в корзине и получение продуктов из базы данных.
         """
         product_ids = self.cart.keys()
-        # получение объектов product и добавление их в корзину
         products = Product.objects.filter(id__in=product_ids)
-        for product in products:
-            self.cart[str(product.id)]['product'] = product
 
-        for item in self.cart.values():
-            item['price'] = Decimal(item['price'])
-            item['total_price'] = item['price'] * item['quantity']
+        # создаём копию данных корзины
+        cart_copy = {}
+        for key, value in self.cart.items():
+            cart_copy[key] = value.copy()
+
+        for product in products:
+            cart_copy[str(product.id)]['product'] = product
+
+        for item in cart_copy.values():
+            price = Decimal(item['price'])
+            item['price'] = price
+            item['total_price'] = price * item['quantity']
             yield item
 
     def __len__(self):
@@ -66,14 +72,12 @@ class Cart(object):
         """
         return sum(item['quantity'] for item in self.cart.values())
 
-
     def get_total_price(self):
         """
         Подсчет стоимости товаров в корзине.
         """
         return sum(Decimal(item['price']) * item['quantity'] for item in
                 self.cart.values())
-
 
     def clear(self):
         # удаление корзины из сессии

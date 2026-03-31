@@ -17,7 +17,6 @@ EXTERNAL_CATEGORY_ICONS = {
 }
 
 
-
 def categories(request):
     """
     Добавляет в контекст все категории и формирует category_menu

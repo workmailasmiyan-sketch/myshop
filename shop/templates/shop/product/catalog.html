@@ -1,13 +1,10 @@
 {% extends "shop/base.html" %}
-{% load static %}
 
 {% block title %}
 Каталог товаров
 {% endblock %}
 
 {% block content %}
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <section class="product-section">
 
@@ -25,34 +22,22 @@
             <input type="radio" id="price_desc" name="sort" value="price_desc"
                    {% if current_sort == 'price_desc' %}checked{% endif %}
                    onchange="this.form.submit()">
-            <label for="price_desc">
-                Цена
-                <i class="bi bi-sort-down"></i>
-            </label>
+            <label for="price_desc">Цена ↓</label>
 
             <input type="radio" id="price_asc" name="sort" value="price_asc"
                    {% if current_sort == 'price_asc' %}checked{% endif %}
                    onchange="this.form.submit()">
-            <label for="price_asc">
-                Цена
-                <i class="bi bi-sort-up"></i>
-            </label>
+            <label for="price_asc">Цена ↑</label>
 
             <input type="radio" id="name_asc" name="sort" value="name_asc"
                    {% if current_sort == 'name_asc' %}checked{% endif %}
                    onchange="this.form.submit()">
-            <label for="name_asc">
-                A–Я
-                <i class="bi bi-sort-alpha-down"></i>
-            </label>
+            <label for="name_asc">A–Я</label>
 
             <input type="radio" id="name_desc" name="sort" value="name_desc"
                    {% if current_sort == 'name_desc' %}checked{% endif %}
                    onchange="this.form.submit()">
-            <label for="name_desc">
-                Я–A
-                <i class="bi bi-sort-alpha-up"></i>
-            </label>
+            <label for="name_desc">Я–A</label>
 
         </div>
 
@@ -65,21 +50,19 @@
         {% if products %}
             {% for product in products %}
                 <div class="product-card">
+
                     <a href="{{ product.get_absolute_url }}">
-                        <img src="{% if product.image %}
-                                    {{ product.image.url }}
-                                  {% else %}
-                                    {% static 'img/no_image.png' %}
-                                  {% endif %}">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
                         <h3>{{ product.name }}</h3>
                     </a>
 
                     <div class="product-bottom">
                         <span class="price">{{ product.price }} BYN</span>
-                        <a href="{{ product.get_absolute_url }}" class="buy-btn">
-                            Купить
+                        <a href="{% url 'shop:product_detail' product.id product.slug %}" class="buy-btn">
+                            Подробнее
                         </a>
                     </div>
+
                 </div>
             {% endfor %}
         {% else %}
@@ -94,8 +77,8 @@
     <div class="pagination">
 
         {% if products.has_previous %}
-            <a href="?page={{ products.previous_page_number }}&q={{ query }}&sort={{ current_sort }}">
-                <i class="bi bi-chevron-left"></i>
+            <a href="?page={{ products.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if current_sort %}&sort={{ current_sort }}{% endif %}">
+                &lsaquo;
             </a>
         {% endif %}
 
@@ -103,15 +86,15 @@
             {% if products.number == num %}
                 <span class="active">{{ num }}</span>
             {% elif num >= products.number|add:-2 and num <= products.number|add:2 %}
-                <a href="?page={{ num }}&q={{ query }}&sort={{ current_sort }}">
+                <a href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}{% if current_sort %}&sort={{ current_sort }}{% endif %}">
                     {{ num }}
                 </a>
             {% endif %}
         {% endfor %}
 
         {% if products.has_next %}
-            <a href="?page={{ products.next_page_number }}&q={{ query }}&sort={{ current_sort }}">
-                <i class="bi bi-chevron-right"></i>
+            <a href="?page={{ products.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if current_sort %}&sort={{ current_sort }}{% endif %}">
+                &rsaquo;
             </a>
         {% endif %}
 

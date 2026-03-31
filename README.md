@@ -58,8 +58,8 @@
 ### 1. Клонировать репозиторий
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/workmailasmiyan-sketch/myshop.git
+cd myshop
 ```
 
 ### 2. Создать виртуальное окружение

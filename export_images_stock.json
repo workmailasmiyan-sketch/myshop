@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Apple iPhone 13 128GB (темная ночь)",
+        "slug": "iphone-13-128gb-midnight",
+        "image": "products/2026/02/23/phone3.jpg",
+        "stock": 8
+    },
+    {
+        "name": "Apple iPhone 16 128GB (розовый)",
+        "slug": "iphone-16-128gb-pink",
+        "image": "products/2026/02/23/phone1.jpg",
+        "stock": 10
+    },
+    {
+        "name": "Asus ROG",
+        "slug": "asus-rog",
+        "image": "products/2024/11/29/1.jpg",
+        "stock": 1
+    },
+    {
+        "name": "C++ для начинающих — Виктор Шитов",
+        "slug": "cpp-dlya-nachinayushchikh",
+        "image": "products/2026/02/23/book2.jpg",
+        "stock": 18
+    },
+    {
+        "name": "Mac",
+        "slug": "mac",
+        "image": "products/2024/11/29/2.jpg",
+        "stock": 2
+    },
+    {
+        "name": "RGB Cooling Laptop Stand",
+        "slug": "rgb-cooling-laptop-stand",
+        "image": "products/2026/02/23/game3.jpg",
+        "stock": 20
+    },
+    {
+        "name": "Redmi Note 14 Pro 5G 12/256GB (зеленый)",
+        "slug": "redmi-note-14-pro-12-256",
+        "image": "products/2026/02/23/phone2.jpg",
+        "stock": 15
+    },
+    {
+        "name": "Sony PlayStation 5",
+        "slug": "sony-playstation-5",
+        "image": "products/2026/02/23/game2.jpg",
+        "stock": 6
+    },
+    {
+        "name": "VR Gaming Headset Rokid",
+        "slug": "vr-gaming-headset-rokid",
+        "image": "products/2026/02/23/game1.jpg",
+        "stock": 10
+    },
+    {
+        "name": "Wenger City Sport Blue",
+        "slug": "wenger-city-sport-blue",
+        "image": "products/2026/02/23/wristwatch3.jpg",
+        "stock": 12
+    },
+    {
+        "name": "Wenger Sea Force Diver Blue",
+        "slug": "wenger-sea-force-diver-blue",
+        "image": "products/2026/02/23/wristwatch1.jpg",
+        "stock": 8
+    },
+    {
+        "name": "Wenger Urban Classic Black",
+        "slug": "wenger-urban-classic-black",
+        "image": "products/2026/02/23/wristwatch2.jpg",
+        "stock": 15
+    },
+    {
+        "name": "Алгоритмы с примерами на Python — Джордж Хайнеман",
+        "slug": "algorithms-python-heineman",
+        "image": "products/2026/02/23/book3.jpg",
+        "stock": 12
+    },
+    {
+        "name": "Веб-камера Epos Expand Vision 1",
+        "slug": "epos-expand-vision-1",
+        "image": "products/2026/02/23/electro1.jpg",
+        "stock": 10
+    },
+    {
+        "name": "Игровой монитор Xiaomi Redmi G Pro 27\"",
+        "slug": "xiaomi-redmi-g-pro-27",
+        "image": "products/2026/02/23/electro2.jpg",
+        "stock": 7
+    },
+    {
+        "name": "Картридж Canon для MF264dw",
+        "slug": "canon-cartridge-mf264dw",
+        "image": "products/2026/02/23/ofice3.jpg",
+        "stock": 15
+    },
+    {
+        "name": "Кеды Puma Classic",
+        "slug": "puma-classic-sneakers",
+        "image": "products/2026/02/23/sport3.jpg",
+        "stock": 15
+    },
+    {
+        "name": "Коммутатор TP-Link TL-SL1218P",
+        "slug": "tp-link-tl-sl1218p",
+        "image": "products/2026/02/23/electro3.jpg",
+        "stock": 5
+    },
+    {
+        "name": "Компьютер FK BY Falcon 170335",
+        "slug": "fk-by-falcon-170335",
+        "image": "products/2026/02/23/comp1.jpg",
+        "stock": 3
+    },
+    {
+        "name": "Компьютер Jet Gamer 5i10400FD16SD24X105TG3W5",
+        "slug": "jet-gamer-5i10400fd16sd24x105tg3w5",
+        "image": "products/2026/02/23/comp2.jpg",
+        "stock": 5
+    },
+    {
+        "name": "Кроссовки Fila Trail",
+        "slug": "fila-trail-sneakers",
+        "image": "products/2026/02/23/sport1.jpg",
+        "stock": 12
+    },
+    {
+        "name": "Литиевая батарейка CR2032",
+        "slug": "lithium-battery-cr2032",
+        "image": "products/2026/02/23/home2.jpg",
+        "stock": 50
+    },
+    {
+        "name": "Ноутбук Blackview AceBook 12-I512450H (серый)",
+        "slug": "blackview-acebook-12-i512450h",
+        "image": "products/2026/02/23/nout2.jpg",
+        "stock": 10
+    },
+    {
+        "name": "Ноутбук Blackview GamiBook 8 16GB/512GB (серый)",
+        "slug": "blackview-gamibook-8-16gb-512gb",
+        "image": "products/2026/02/23/nout1.jpg",
+        "stock": 7
+    },
+    {
+        "name": "Принтер лазерный Canon i-SENSYS MF264dw",
+        "slug": "canon-i-sensys-mf264dw",
+        "image": "products/2026/02/23/ofice2.jpg",
+        "stock": 4
+    },
+    {
+        "name": "Программируем на Python — Майкл Доусон",
+        "slug": "python-michael-dawson",
+        "image": "products/2026/02/23/book1.jpg",
+        "stock": 20
+    },
+    {
+        "name": "Солевая лампа",
+        "slug": "salt-lamp",
+        "image": "products/2026/02/23/home1.jpg",
+        "stock": 15
+    },
+    {
+        "name": "Увлажнитель воздуха",
+        "slug": "air-humidifier",
+        "image": "products/2026/02/23/home3.jpg",
+        "stock": 12
+    },
+    {
+        "name": "Футболка Kappa Winning",
+        "slug": "kappa-winning-tshirt",
+        "image": "products/2026/02/23/sport2.jpg",
+        "stock": 20
+    },
+    {
+        "name": "Шредер Jinpex \"JP-8112C\"",
+        "slug": "jinpex-jp-8112c",
+        "image": "products/2026/02/23/ofice1.jpg",
+        "stock": 6
+    }
+]
